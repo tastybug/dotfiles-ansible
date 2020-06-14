@@ -1,6 +1,7 @@
 - openjdk from homebrew
 - vim
 - private ssh keys? 
+- vscode
 + gitconfig cleanup
 + jq
 + zsh, oh-my-zsh
