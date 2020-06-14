@@ -22,6 +22,13 @@ Check which tools are currently supported: `ls -l .dotfiles/roles`.
 
 Next run `.dotfiles/bin/dot-bootstap git jq zsh` or any other role you are interested in.
 
+### On a corporate machine
+
+On corp issued machines, you usually have a different git user name, e-mail address. To overwrite the standard name baked into this repo, run this:
+```
+ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --extra-vars "git_user=jdoe git_email=jdoe@corporate.com" --tags git
+```
+
 ### Links
 
 Inspired by [kespinola/dotfiles](https://github.com/kespinola/dotfiles) and [Manage your dotfiles with Ansible](https://medium.com/espinola-designs/manage-your-dotfiles-with-ansible-6dbedd5532bb)
