@@ -1,8 +1,5 @@
 - name: Install git
-  apt: name=git state=present
-  become: yes
-  become_user: root
-  become_method: sudo
+  homebrew: name=git state=present
 
 - name: Link global gitignore file
   file:
