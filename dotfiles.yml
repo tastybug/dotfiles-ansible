@@ -4,6 +4,9 @@
     - role: git
       tags:
         - git
+    - role: jq
+      tags:
+        - jq
     - role: zsh
       tags:
         - zsh

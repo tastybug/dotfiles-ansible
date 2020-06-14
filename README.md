@@ -1,17 +1,27 @@
 # Dotfiles via Ansible
 
+This is a personal [Ansible](https://www.ansible.com/) based dotfile management mechanism, that currently supports installation and configuration of the following tools:
 
-### Setting up shop on a new machine
+* `git`
+* `jq`
+* `zsh` with `oh-my-zsh`
+
+----
+
+## Setting up a new machine
+Make sure that `brew` and `git` have already been installed. Then run this:
+
 ```
-$ brew install git
 $ cd ~
-$ git clone git@github.com:kespinola/dotfiles .dotfiles
+$ git clone git@github.com:tastybug/dotfiles-ansible .dotfiles
 $ .dotfiles/bin/dot-bootstap
 ```
 
-### Install single roles
-`ls -l .dotfiles/roles` shows you which roles it currently supports. Next run for example`.dotfiles/bin/dot-bootstap zsh` or any other role you are interested in.
+### Installing single roles
+Check which tools are currently supported: `ls -l .dotfiles/roles`.
+
+Next run `.dotfiles/bin/dot-bootstap git jq zsh` or any other role you are interested in.
 
 ### Links
 
-https://medium.com/espinola-designs/manage-your-dotfiles-with-ansible-6dbedd5532bb
+Inspired by [kespinola/dotfiles](https://github.com/kespinola/dotfiles) and [Manage your dotfiles with Ansible](https://medium.com/espinola-designs/manage-your-dotfiles-with-ansible-6dbedd5532bb)
