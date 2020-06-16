@@ -1,2 +1,2 @@
-- name: Install jq
+- name: Install kubectl
   homebrew: name=kubectl state=present
