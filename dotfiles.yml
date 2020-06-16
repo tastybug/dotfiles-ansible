@@ -7,6 +7,9 @@
     - role: jq
       tags:
         - jq
+    - role: kubectl
+      tags:
+        - kubectl
     - role: zsh
       tags:
         - zsh
