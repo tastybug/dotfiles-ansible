@@ -10,6 +10,9 @@
     - role: kubectl
       tags:
         - kubectl
+    - role: golang
+      tags:
+        - golang
     - role: zsh
       tags:
         - zsh
