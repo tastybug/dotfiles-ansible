@@ -104,3 +104,17 @@ source $HOME/.dotfiles/roles/zsh/config.zsh
 source $HOME/.dotfiles/roles/zsh/env.zsh
 source $HOME/.dotfiles/roles/zsh/path.zsh
 
+# external files not provided by this project
+# use those to have stable local deviations e.g. for a corp machine
+if [[ -a $HOME/.dotfiles/roles/zsh/aliases_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/aliases_external.zsh
+fi
+if [[ -a $HOME/.dotfiles/roles/zsh/completion_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/completion_external.zsh
+fi
+if [[ -a $HOME/.dotfiles/roles/zsh/path_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/path_external.zsh
+fi
+if [[ -a $HOME/.dotfiles/roles/zsh/env_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/env_external.zsh
+fi
