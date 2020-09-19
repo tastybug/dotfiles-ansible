@@ -4,6 +4,9 @@
     - role: git
       tags:
         - git
+    - role: github-cli
+      tags:
+        - github-cli
     - role: jq
       tags:
         - jq

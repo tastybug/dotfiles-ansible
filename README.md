@@ -5,6 +5,7 @@
 This is a personal [Ansible](https://www.ansible.com/) based dotfile management mechanism, that currently supports installation and configuration of the following tools:
 
 * `git`
+* `github-cli`
 * `golang` runtime via brew
 * `jq`
 * `kubectl`

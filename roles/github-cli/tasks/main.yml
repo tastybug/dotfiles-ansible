@@ -1,0 +1,2 @@
+- name: Install github-cli
+  homebrew: name=gh state=present
