@@ -1,6 +1,9 @@
 - name: Set up local workstation
   hosts: local
   roles:
+    - role: awscli
+      tags:
+        - awscli
     - role: git
       tags:
         - git
