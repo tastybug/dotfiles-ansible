@@ -30,11 +30,32 @@ Next run `.dotfiles/bin/dot-bootstap git jq zsh` or any other role you are inter
 
 ### On a corporate machine
 
+#### git
 On corp issued machines you usually have a assigned e-mail address and user name, not matching the name on github. The `git` role creates a git configuration that makes assumptions about the name, email address so you need to overwrite those.
 To install the `git` role only with custom settings, run this:
 ```
 ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --extra-vars "git_user=jdoe git_email=jdoe@corporate.com" --tags git
 ```
+
+#### zsh
+You likely have differing paths, environment variables and so on that take precedence over those provided by this repository. Check [./roles/zsh/files/zshrc](./roles/zsh/files/zshrc):
+```
+# external files not provided by this project
+# use those to have stable local deviations e.g. for a corp machine
+if [[ -a $HOME/.dotfiles/roles/zsh/aliases_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/aliases_external.zsh
+fi
+if [[ -a $HOME/.dotfiles/roles/zsh/completion_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/completion_external.zsh
+fi
+if [[ -a $HOME/.dotfiles/roles/zsh/path_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/path_external.zsh
+fi
+if [[ -a $HOME/.dotfiles/roles/zsh/env_external.zsh ]]; then
+    source $HOME/.dotfiles/roles/zsh/env_external.zsh
+fi
+```
+
 
 ### Links
 
