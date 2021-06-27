@@ -10,6 +10,7 @@ This is a personal [Ansible](https://www.ansible.com/) based dotfile management 
 * `jq`
 * `kubectl`
 * `zsh` with `oh-my-zsh`
+* `vim`
 
 ----
 
