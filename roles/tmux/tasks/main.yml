@@ -1,0 +1,23 @@
+- name: Install tmux
+  homebrew: name=tmux state=present
+
+- name: Check for .tmux.conf
+  stat: path="{{dotfiles_user_home}}/.tmux.conf"
+  register: tmux_stat
+
+- name: Back up .tmux.conf
+  command: mv ~/.tmux.conf ~/.tmux.conf.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.tmux.conf.bak"
+  when: tmux_stat.stat.exists
+
+- name: Remove .tmux.conf
+  file: name=~/.tmux.conf state=absent
+  when: tmux_stat.stat.exists
+
+- name: Symlink .tmux.conf
+  file:
+    src: "{{ dotfiles_home }}/roles/tmux/files/tmux.conf"
+    dest: "{{dotfiles_user_home}}/.tmux.conf"
+    state: link
+

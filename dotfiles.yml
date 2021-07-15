@@ -19,6 +19,9 @@
     - role: golang
       tags:
         - golang
+    - role: tmux
+      tags:
+        - tmux
     - role: zsh
       tags:
         - zsh
