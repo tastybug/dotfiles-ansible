@@ -4,3 +4,7 @@ colorscheme delek
 
 :set number
 :set backspace=indent,eol,start
+" highlight all matches; can be muted for current search with :nohls
+:set hlsearch
+" incremental search: shows next match while typing
+:set is
