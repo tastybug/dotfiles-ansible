@@ -1,2 +1,2 @@
 - name: Install yq
-  homebrew: name=yq state=present
+  homebrew: name=python-yq state=present
