@@ -20,3 +20,15 @@
     src: "{{ dotfiles_home }}/roles/vim/files/vimrc"
     dest: "{{dotfiles_user_home}}/.vimrc"
     state: link
+
+- name: Is indentLine plugin already present?
+  stat: path="~/.vim/pack/vendor/start/indentLine"
+  register: indentline_stat
+
+- name: Download indentLine plugin
+  command: git clone https://github.com/Yggdroot/indentLine.git ~/.vim/pack/vendor/start/indentLine
+  when: not indentline_stat.stat.exists
+
+- name: Install indentLine plugin
+  command: vim -u NONE -c "helptags  ~/.vim/pack/vendor/start/indentLine/doc" -c "q"
+  when: not indentline_stat.stat.exists

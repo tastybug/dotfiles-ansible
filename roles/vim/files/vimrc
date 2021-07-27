@@ -1,6 +1,7 @@
 syntax on
 colorscheme delek
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 :set number
 :set backspace=indent,eol,start
@@ -8,3 +9,6 @@ colorscheme delek
 :set hlsearch
 " incremental search: shows next match while typing
 :set is
+
+" indentline settings
+let g:indentLine_char = '⦙'
