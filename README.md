@@ -8,6 +8,7 @@ This is a personal [Ansible](https://www.ansible.com/) based dotfile management 
 * `github-cli`
 * `golang` runtime via brew
 * `jq`
+* `yq` (jq for yaml)
 * `kubectl`
 * `zsh` with `oh-my-zsh`
 * `vim`

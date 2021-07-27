@@ -28,3 +28,6 @@
     - role: vim
       tags:
         - vim
+    - role: yq
+      tags:
+        - yq
