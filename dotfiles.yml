@@ -31,3 +31,6 @@
     - role: yq
       tags:
         - yq
+    - role: watchexec
+      tags:
+        - watchexec
