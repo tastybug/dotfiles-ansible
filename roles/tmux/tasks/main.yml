@@ -1,5 +1,11 @@
-- name: Install tmux
+- name: Install tmux (macos)
   homebrew: name=tmux state=present
+  when: ansible_facts['os_family'] == 'Darwin'
+
+- name: Install tmux (Debian/Ubuntu)
+  apt: name=tmux state=present update_cache=yes
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true
 
 - name: Check for .tmux.conf
   stat: path="{{dotfiles_user_home}}/.tmux.conf"
