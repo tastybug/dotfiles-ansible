@@ -1,2 +1,7 @@
-- name: Install aws-cli
+- name: Install awscli (Darwin)
   homebrew: name=awscli state=present
+
+- name: Install awscli (Debian)
+  apt: name=awscli state=present update_cache=yes
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true
