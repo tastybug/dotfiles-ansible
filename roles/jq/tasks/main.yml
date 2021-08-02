@@ -1,2 +1,8 @@
 - name: Install jq
   homebrew: name=jq state=present
+  when: ansible_family == 'Darwin'
+
+- name: Install jq
+  apt: name=jq state=present update_cache=yes
+  become: true
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' 

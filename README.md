@@ -17,7 +17,7 @@ This is a personal [Ansible](https://www.ansible.com/) based dotfile management 
 ----
 
 ## Setting up a new machine
-Make sure that `brew` and `git` have already been installed. Then run this:
+Make sure that `ansible`, `brew` (on macos) and `git` have already been installed. Then run this:
 
 ```
 $ cd ~
