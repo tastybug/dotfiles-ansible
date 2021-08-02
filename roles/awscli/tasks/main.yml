@@ -1,5 +1,6 @@
 - name: Install awscli (Darwin)
   homebrew: name=awscli state=present
+  when: ansible_facts['os_family'] == 'Darwin'
 
 - name: Install awscli (Debian)
   apt: name=awscli state=present update_cache=yes
