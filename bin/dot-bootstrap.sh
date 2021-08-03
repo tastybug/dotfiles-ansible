@@ -14,7 +14,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   if ! [ -x "$(command -v ansible)" ]; then
-    sudo apt-get update && sudo apt-get install ansible
+    sudo apt-get update > /dev/null && sudo apt-get -y install ansible
   fi 
   ASK_PASS='--ask-become-pass'
 fi
