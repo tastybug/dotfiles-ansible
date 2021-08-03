@@ -1,10 +1,14 @@
-- name: Install watchexec (macos)
+- name: Install watchexec (Macos)
   homebrew: name=watchexec state=present
   when: ansible_facts['os_family'] == 'Darwin'
 
 # https://github.com/watchexec/watchexec/releases/download/cli-v1.17.1/watchexec-1.17.1-x86_64-unknown-linux-gnu.deb
 # wget https://github.com/watchexec/watchexec/releases/download/cli-v1.17.1/watchexec-1.17.1-x86_64-unknown-linux-gnu.deb -P /tmp/
-- name: Install watchexec (debian)
+- name: Install watchexec (Debian/Arm)
   command: /bin/bash -c 'wget https://github.com/watchexec/watchexec/releases/download/cli-v1.17.1/watchexec-1.17.1-armv7-unknown-linux-gnueabihf.deb -P /tmp/; dpkg -r watchexec; dpkg -i /tmp/watchexec-1.17.1-armv7-unknown-linux-gnueabihf.deb'
-  when: ansible_facts['os_family'] == 'Debian' 
+  when: ansible_facts['os_family'] == 'Debian' and (ansible_facts['architecture'] == 'arm7h1' or ansible_facts['architecture'] == 'arm7hn1' or ansible_facts['architecture'] == 'arm71'))
   become: true
+
+- name: Install watchexec (Debian/x86_64)
+  command: /bin/bash -c 'wget https://github.com/watchexec/watchexec/releases/download/cli-v1.17.1/watchexec-1.17.1-x86_64-unknown-linux-gnu.deb -P /tmp/; dpkg -r watchexec; dpkg -i /tmp/watchexec-1.17.1-x86_64-unknown-linux-gnu.deb'
+  when: ansible_facts['os_family'] == 'Debian' and ansible_facts['architecture'] == 'x86_64'
