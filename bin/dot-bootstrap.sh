@@ -7,10 +7,6 @@ if [ -z $tags ]; then
   tags="all"
 fi
 
-if ! [ -x "$(command -v ansible)" ]; then
-  brew install ansible
-fi
-
 # no darwin task needs elevated privileges
 if [[ "$OSTYPE" == "darwin"* ]]; then
   if ! [ -x "$(command -v ansible)" ]; then
