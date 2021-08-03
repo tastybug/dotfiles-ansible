@@ -26,7 +26,7 @@ $ cd ~
 $ git clone git@github.com:tastybug/dotfiles-ansible .dotfiles
 ```
 
-If you run `$ .dotfiles/bin/dot-bootstap` next, all supported tools will be installed.
+Run `$ .dotfiles/bin/dot-bootstap awscli,jq,git,...` next listing all required tools, comma separated.
 
 ### Installing single tools
 Check which tools are currently supported: `ls -l .dotfiles/roles`.

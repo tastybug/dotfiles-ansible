@@ -3,8 +3,9 @@ set -e
 
 tags="$1"
 
-if [ -z $tags ]; then
-  tags="all"
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 TOOL[,TOOL...]" >&2
+  exit 1
 fi
 
 # no darwin task needs elevated privileges
