@@ -26,12 +26,7 @@ $ cd ~
 $ git clone git@github.com:tastybug/dotfiles-ansible .dotfiles
 ```
 
-Run `$ .dotfiles/bin/dot-bootstap awscli,jq,git,...` next listing all required tools, comma separated.
-
-### Installing single tools
-Check which tools are currently supported: `ls -l .dotfiles/roles`.
-
-Next run `.dotfiles/bin/dot-bootstap git jq zsh` or any other role you are interested in.
+Run `$ .dotfiles/bin/dot-bootstap awscli,jq,git,...` next, listing one or more tools for installation.
 
 ### On a corporate machine
 
