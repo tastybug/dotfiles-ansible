@@ -5,8 +5,9 @@ tags="$1"
 
 if [ "$#" -ne 1 ]; then
   echo "Usage: $0 TOOL[,TOOL...]" >&2
-  echo ""
-  echo "Available:\n$(ls ~/.dotfiles/roles)"
+  echo "" >&2
+  echo "Available:" >&2
+  echo "$(ls ~/.dotfiles/roles)" >&2
   exit 1
 fi
 
