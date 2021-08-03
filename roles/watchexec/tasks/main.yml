@@ -8,7 +8,7 @@
   command: /bin/bash -c 'wget https://github.com/watchexec/watchexec/releases/download/cli-v1.17.1/watchexec-1.17.1-armv7-unknown-linux-gnueabihf.deb -P /tmp/; dpkg -r watchexec; dpkg -i /tmp/watchexec-1.17.1-armv7-unknown-linux-gnueabihf.deb'
   when: 
     - ansible_facts['os_family'] == 'Debian' 
-    - ansible_facts['architecture'] == 'arm7h1' or ansible_facts['architecture'] == 'arm7hn1' or ansible_facts['architecture'] == 'arm71')
+    - ansible_facts['architecture'] == 'arm7h1' or ansible_facts['architecture'] == 'arm7hn1' or ansible_facts['architecture'] == 'arm71'
   become: true
 
 - name: Install watchexec (Debian/x86_64)
