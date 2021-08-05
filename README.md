@@ -15,6 +15,7 @@ This is a personal [Ansible](https://www.ansible.com/) based dotfile management 
 * `tmux`
 * `awscli`
 * `watchexec`
+* `terraform`
 
 ----
 

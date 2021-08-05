@@ -1,0 +1,18 @@
+- name: Install terraform (Macos)
+  homebrew: name=terraform state=present
+  when: ansible_facts['os_family'] == 'Darwin'
+
+- name: Add hashicorp repository key (Debian)
+  command: curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - 
+  when: ansible_facts['os_family'] == 'Debian' 
+  become: true
+
+- name: Add repository (Debian)
+  command: apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" 
+  when: ansible_facts['os_family'] == 'Debian' 
+  become: true
+
+- name: Install terraform (Debian)
+  apt: name=awscli state=present update_cache=yes
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true

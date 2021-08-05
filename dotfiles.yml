@@ -19,6 +19,9 @@
     - role: golang
       tags:
         - golang
+    - roles: terraform
+      tags:
+        - terraform
     - role: tmux
       tags:
         - tmux
