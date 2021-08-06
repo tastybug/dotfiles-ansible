@@ -2,6 +2,11 @@
   homebrew: name=terraform state=present
   when: ansible_facts['os_family'] == 'Darwin'
 
+- name: Install apt-add-repository (Debian)
+  apt: name=software-properties-common state=present
+  when: ansible_facts['os_family'] == 'Debian'
+  become: true
+
 - name: Add hashicorp repository key (Debian)
   shell: 'curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -'
   when: ansible_facts['os_family'] == 'Debian' 
