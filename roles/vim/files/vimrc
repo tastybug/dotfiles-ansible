@@ -1,15 +1,23 @@
 syntax on
-colorscheme delek
+"colorscheme delek
+set bg=dark
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType python setlocal ts=2 sts=2 sw=2 expandtab
 
-:set number
-:set backspace=indent,eol,start
+" show line number
+set number
+set backspace=indent,eol,start
 " highlight all matches; can be muted for current search with :nohls
-:set hlsearch
+set hlsearch
 " incremental search: shows next match while typing
-:set is
+set is
 
 " indentline settings
 let g:indentLine_char = '⦙'
+
+" always show this many lines above or below current line
+set scrolloff=5
+
+set autoindent
+set smartindent
