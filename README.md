@@ -11,7 +11,7 @@ This is a personal [Ansible](https://www.ansible.com/) based dotfile management 
 * `yq` (jq for yaml)
 * `kubectl`
 * `zsh` with `oh-my-zsh`
-* `vim`
+* `vim` with some plugins
 * `tmux`
 * `awscli`
 * `watchexec`

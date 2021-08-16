@@ -1,6 +1,6 @@
 - openjdk from homebrew
-- vim
-- private ssh keys? 
++ vim
++ NOPE private ssh keys? 
 - vscode
 + golang
 + gitconfig cleanup

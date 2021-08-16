@@ -24,6 +24,6 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   ASK_PASS='--ask-become-pass'
 fi
 
-ansible-playbook $ASK_PASS -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --tags $tags
+ANSIBLE_NOCOWS=1 ansible-playbook $ASK_PASS -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --tags $tags
 
 echo "Done"
