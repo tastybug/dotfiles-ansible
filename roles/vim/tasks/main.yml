@@ -40,7 +40,7 @@
   when: not indentline_stat.stat.exists
 
 - name: Is airline already present?
-  stat: path="~/.vim/pack/vendor/start/vim-airline"
+  stat: path="~/.vim/pack/dist/start/vim-airline"
   register: airline_stat
 
 - name: Download airline plugin
