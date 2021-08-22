@@ -22,7 +22,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "Installing ansible .."
     sudo apt-get --quiet update > /dev/null && sudo apt-get --yes --quiet install ansible
   fi 
-  if [ ${UID} -ne 1 ]; then
+  if [ ${UID} -ne 0 ]; then
   	ASK_PASS='--ask-become-pass'
   fi
 fi
