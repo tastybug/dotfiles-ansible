@@ -8,6 +8,7 @@ if [ "$#" -ne 1 ]; then
   echo "" >&2
   echo "Available:" >&2
   echo "$(ls ~/.dotfiles/roles)" >&2
+  echo "${UID}"
   exit 1
 fi
 
@@ -21,7 +22,9 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "Installing ansible .."
     sudo apt-get --quiet update > /dev/null && sudo apt-get --yes --quiet install ansible
   fi 
-  ASK_PASS='--ask-become-pass'
+  if [ ${UID} -ne 1 ]; then
+  	ASK_PASS='--ask-become-pass'
+  fi
 fi
 
 ANSIBLE_NOCOWS=1 ansible-playbook $ASK_PASS -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --tags $tags
