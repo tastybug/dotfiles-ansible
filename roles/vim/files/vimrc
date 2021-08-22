@@ -2,6 +2,9 @@ syntax on
 "colorscheme delek
 set bg=dark
 
+" default indentation
+set ts=4 sw=4
+
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType python setlocal ts=2 sts=2 sw=2 expandtab
 
