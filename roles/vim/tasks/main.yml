@@ -27,6 +27,7 @@
     dest: "{{dotfiles_user_home}}/.vimrc"
     state: link
 
+# indentline plugin
 - name: Is indentLine plugin already present?
   stat: path="~/.vim/pack/vendor/start/indentLine"
   register: indentline_stat
@@ -39,6 +40,7 @@
   command: vim -u NONE -c "helptags  ~/.vim/pack/vendor/start/indentLine/doc" -c "q"
   when: not indentline_stat.stat.exists
 
+# airline plugin
 - name: Is airline already present?
   stat: path="~/.vim/pack/dist/start/vim-airline"
   register: airline_stat
@@ -50,3 +52,22 @@
 - name: Install airline plugin
   command: vim -u NONE -c "helptags  ~/.vim/pack/vendor/start/vim-airline/doc" -c "q"
   when: not airline_stat.stat.exists
+
+# nginx file highlighting (https://gist.github.com/ralavay/c4c7750795ccfd72c2db)
+- name: create syntax dir
+  file:
+    path: "{{ dotfiles_user_home }}/.vim/syntax"
+    state: directory
+    mode: 0755
+
+- name: nginx syntax highlighting 1/2
+  file:
+    src: "{{ dotfiles_home }}/roles/vim/files/nginx.vim"
+    dest: "{{ dotfiles_user_home }}/.vim/syntax/nginx.vim"
+    state: link
+
+- name: nginx syntax highlighting 2/2
+  file:
+    src: "{{ dotfiles_home }}/roles/vim/files/filetype.vim"
+    dest: "{{ dotfiles_user_home }}/.vim/filetype.vim"
+    state: link
