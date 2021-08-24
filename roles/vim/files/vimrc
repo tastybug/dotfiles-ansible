@@ -8,8 +8,8 @@ set ts=4 sw=4
 " mouse selection will not start visual mode, preventing me to select text to be copied with system clipboard
 set mouse-=a
 
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType python setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType python,py setlocal ts=2 sts=2 sw=2 expandtab
 
 " show line number
 set number
