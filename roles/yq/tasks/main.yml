@@ -1,2 +1,26 @@
-- name: Install yq
+- name: Install yq (macos)
   homebrew: name=python-yq state=present
+
+- name: Install watchexec (Debian)
+  command: /bin/bash -c 'apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64'
+  when: 
+    - ansible_facts['os_family'] == 'Debian' 
+  become: true
+
+- name: Install watchexec (Debian)
+  command: /bin/bash -c 'add-apt-repository ppa:rmescandon/yq'
+  when: 
+    - ansible_facts['os_family'] == 'Debian' 
+  become: true
+
+- name: Install watchexec (Debian)
+  command: /bin/bash -c 'apt update'
+  when: 
+    - ansible_facts['os_family'] == 'Debian' 
+  become: true
+
+- name: Install watchexec (Debian)
+  command: /bin/bash -c 'apt install yq -y'
+  when: 
+    - ansible_facts['os_family'] == 'Debian' 
+  become: true
