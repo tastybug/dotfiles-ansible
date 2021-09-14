@@ -16,15 +16,8 @@
     - ansible_facts['distribution'] == 'Ubuntu'
   become: true
 
-- name: Add yq (Ubuntu)
-  command: /bin/bash -c 'add-apt-repository ppa:rmescandon/yq'
-  when: 
-    - ansible_facts['os_family'] == 'Debian' 
-    - ansible_facts['distribution'] == 'Ubuntu'
-  become: true
-
-- name: Update apt cache (Ubuntu)
-  command: /bin/bash -c 'apt update'
+- name: Add yq repo (Ubuntu)
+  command: /bin/bash -c 'add-apt-repository ppa:rmescandon/yq -y'
   when: 
     - ansible_facts['os_family'] == 'Debian' 
     - ansible_facts['distribution'] == 'Ubuntu'
