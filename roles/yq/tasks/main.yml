@@ -2,26 +2,37 @@
   homebrew: name=python-yq state=present
   when: ansible_facts['os_family'] == 'Darwin'
 
-- name: Install watchexec (Debian)
-  command: /bin/bash -c 'apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64'
+- name: Add software-properties-common (gives you add-apt-repository) (Ubuntu)
+  apt: name=software-properties-common state=present update_cache=yes
   when: 
-    - ansible_facts['os_family'] == 'Debian' 
+    - ansible_facts['os_family'] == 'Debian'
+    - ansible_facts['distribution'] == 'Ubuntu'
   become: true
 
-- name: Install watchexec (Debian)
+- name: Add yq repo signing key (Ubuntu)
+  command: /bin/bash -c 'apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64'
+  when: 
+    - ansible_facts['os_family'] == 'Debian'
+    - ansible_facts['distribution'] == 'Ubuntu'
+  become: true
+
+- name: Add yq (Ubuntu)
   command: /bin/bash -c 'add-apt-repository ppa:rmescandon/yq'
   when: 
     - ansible_facts['os_family'] == 'Debian' 
+    - ansible_facts['distribution'] == 'Ubuntu'
   become: true
 
-- name: Install watchexec (Debian)
+- name: Update apt cache (Ubuntu)
   command: /bin/bash -c 'apt update'
   when: 
     - ansible_facts['os_family'] == 'Debian' 
+    - ansible_facts['distribution'] == 'Ubuntu'
   become: true
 
-- name: Install watchexec (Debian)
+- name: Install yq (Ubuntu)
   command: /bin/bash -c 'apt install yq -y'
   when: 
     - ansible_facts['os_family'] == 'Debian' 
+    - ansible_facts['distribution'] == 'Ubuntu'
   become: true
