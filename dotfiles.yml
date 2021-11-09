@@ -4,6 +4,9 @@
     - role: awscli
       tags:
         - awscli
+    - role: gcloud
+      tags:
+        - gcloud
     - role: git
       tags:
         - git
