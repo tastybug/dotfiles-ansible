@@ -16,6 +16,7 @@ This is a personal dotfile management tool based on [Ansible](https://www.ansibl
 * `awscli`
 * `watchexec`
 * `terraform`
+* `gcloud` (gcp command line tool)
 
 ----
 
