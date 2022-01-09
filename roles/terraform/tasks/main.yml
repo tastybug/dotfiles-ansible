@@ -28,6 +28,7 @@
   when:
    - ansible_facts['os_family'] == 'Debian'
    - ansible_facts['architecture'] == 'x86_64'
+  become: true
  
 # the hashicorp apt repository does not support raspbian (it only knows debian)
 # so at some point I need to find out if I can use Debian directly as an OS for the Rasp
