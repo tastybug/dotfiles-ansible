@@ -13,6 +13,9 @@
     - role: github-cli
       tags:
         - github-cli
+    - role: glow
+      tags:
+        - glow
     - role: jq
       tags:
         - jq

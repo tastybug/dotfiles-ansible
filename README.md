@@ -17,6 +17,7 @@ This is a personal dotfile management tool based on [Ansible](https://www.ansibl
 * `watchexec`
 * `terraform`
 * `gcloud` (gcp command line tool)
+* `glow` command line markdown viewer
 
 ----
 
