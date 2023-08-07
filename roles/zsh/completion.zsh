@@ -4,4 +4,3 @@
 # put the following 2 into completion_external
 # source <(kubectl completion zsh)
 # source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-~
