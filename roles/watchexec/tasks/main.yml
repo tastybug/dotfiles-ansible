@@ -12,7 +12,7 @@
   become: true
 
 - name: Install watchexec (Debian/x86_64)
-  command: /bin/bash -c 'wget https://github.com/watchexec/watchexec/releases/download/cli-v1.17.1/watchexec-1.17.1-x86_64-unknown-linux-gnu.deb -P /tmp/; dpkg -r watchexec; dpkg -i /tmp/watchexec-1.17.1-x86_64-unknown-linux-gnu.deb'
+  command: /bin/bash -c 'wget https://github.com/watchexec/watchexec/releases/download/v1.25.1/watchexec-1.25.1-x86_64-unknown-linux-gnu.deb -P /tmp/; dpkg -r watchexec; dpkg -i /tmp/watchexec-1.25.1-x86_64-unknown-linux-gnu.deb'
   when: 
     - ansible_facts['os_family'] == 'Debian' 
     - ansible_facts['architecture'] == 'x86_64'
