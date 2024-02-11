@@ -1,3 +1,4 @@
 roles/zsh/*_external.zsh
 
 .idea
+wget-log*

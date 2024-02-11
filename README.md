@@ -25,11 +25,11 @@ This is a personal dotfile management tool based on [Ansible](https://www.ansibl
 Make sure that `brew` (on macos) and `git` are pre-installed. Then run this:
 
 ```
-$ cd ~
-$ git clone git@github.com:tastybug/dotfiles-ansible .dotfiles
+cd ~
+git clone git@github.com:tastybug/dotfiles-ansible .dotfiles
 ```
 
-Run `$ .dotfiles/bin/dot-bootstap awscli,jq,git,...` next, listing one or more tools for installation.
+Run `.dotfiles/bin/dot-bootstap.sh vim,jq,git,...` next, listing one or more tools for installation.
 
 ### On a Corporate Machine
 
