@@ -29,7 +29,7 @@ cd ~
 git clone git@github.com:tastybug/dotfiles-ansible .dotfiles
 ```
 
-Run `.dotfiles/bin/dot-bootstap.sh vim,jq,git,...` next, listing one or more tools for installation.
+Run `.dotfiles/bin/dot-bootstrap.sh vim,git,...` next, listing one or more tools for installation.
 
 ### On a Corporate Machine
 
