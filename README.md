@@ -38,7 +38,7 @@ On corp issued machines you usually have a assigned e-mail address and user name
 To install the `git` role with custom settings, run this:
 
 ```
-ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --extra-vars "full_name='John Doe' github_user=jdoe user_email=jdoe@corporate.com" --tags git
+ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --extra-vars "full_name='John Doe' github_user=jdoe user_email=jdoe@corporate.com" --tags git --become-user root --ask-become-pass
 ```
 
 #### zsh
