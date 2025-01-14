@@ -73,4 +73,5 @@
     user = {{ github_user }}
 [init]
 	defaultBranch = main
-
+[includeIf "gitdir:~/workrepos/"]
+	path = ~/workrepos/.gitconfig

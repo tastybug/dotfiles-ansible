@@ -34,11 +34,13 @@ Run `.dotfiles/bin/dot-bootstrap.sh vim,git,...` next, listing one or more tools
 ### On a Corporate Machine
 
 #### git
-On corp issued machines you usually have a assigned e-mail address and user name, not matching the name on github. The `git` role creates a git configuration that makes assumptions about the name, email address so you need to overwrite those.
-To install the `git` role with custom settings, run this:
+On corp issued machines you usually have a assigned e-mail address and user name, not matching the name on github. 
+Place your work related repos (which are subject to a different identity) into folder `~/workrepos` and in there create a `~/workrepos/.gitconfig`. This config file will take precedence for all repos in `workrepos`. In that `gitconfig`, place this:
 
 ```
-ansible-playbook -i ~/.dotfiles/hosts ~/.dotfiles/dotfiles.yml --extra-vars "full_name='John Doe' github_user=jdoe user_email=jdoe@corporate.com" --tags git --become-user root --ask-become-pass
+[user]
+	name = My Corp Name
+	email = john.doe@corp.com
 ```
 
 #### zsh
